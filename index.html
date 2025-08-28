@@ -166,7 +166,7 @@
   </head>
   <body class="min-h-screen bg-(--cream) text-(--ink) antialiased">
     <!-- Top bar -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-(--cream)/70">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-(--cream)/50">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between py-3 sm:py-4">
           <!-- Brand -->
@@ -260,46 +260,45 @@
               >Pedidos</a
             >
             <a href="#faq" class="text-(--deep) hover:text-(--sand)">FAQ</a>
-          </nav>
-
-          <!-- Cta and Mobile Menu Button -->
-          <div class="flex items-center gap-2 sm:gap-3">
             <!-- Social Links -->
-            <a
-              href="https://wa.me/5511988137150"
-              target="_blank"
-              rel="noopener"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="2 2 21 21"
-                class="icon"
+            <div class="flex items-center gap-4">
+              <a
+                href="https://wa.me/5511988137150"
+                target="_blank"
+                rel="noopener"
               >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-                <path
-                  d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://instagram.com/lubo.confeitaria"
-              target="_blank"
-              rel="noopener"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="3 3 18 18"
-                class="icon"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="2 2 21 21"
+                  class="icon"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                  <path
+                    d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com/lubo.confeitaria"
+                target="_blank"
+                rel="noopener"
               >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path
-                  d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
-                />
-                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                <path d="M16.5 7.5v.01" />
-              </svg>
-            </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="3 3 18 18"
+                  class="icon"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+                  />
+                  <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+                  <path d="M16.5 7.5v.01" />
+                </svg>
+              </a>
+            </div>
+
             <!-- Mobile Menu Button -->
             <button
               id="mobile-menu-button"
@@ -330,7 +329,7 @@
                 />
               </svg>
             </button>
-          </div>
+          </nav>
         </div>
 
         <!-- Mobile Navigation Menu -->
@@ -993,7 +992,7 @@
               </p>
             </details>
 
-            <!-- <details
+            <details
               class="group rounded-2xl bg-(--cream) p-6 ring-1 ring-black/5"
             >
               <summary
@@ -1015,15 +1014,237 @@
                   />
                 </svg>
               </summary>
-              <p class="mt-4 text-(--ink)/80">
-                Trabalhamos com diversos sabores tradicionais e especiais:
-                chocolate, baunilha, red velvet, cenoura com chocolate, limão
-                siciliano, doce de leite, bem-casado, entre outros. Também
-                criamos combinações personalizadas de acordo com sua
-                preferência. Todos os ingredientes são selecionados e de alta
-                qualidade.
-              </p>
-            </details> -->
+              <header class="relative mx-auto max-w-6xl px-4 pb-6">
+                <p class="mt-2 max-w-2xl text-slate-600">
+                  Combine sua massa com o recheio preferido, veja também bolos
+                  prontos, doces e bombons.
+                </p>
+
+                <div class="mt-6 flex items-center gap-3">
+                  <label for="filter" class="sr-only">Filtrar sabores</label>
+                  <input
+                    id="filter"
+                    type="search"
+                    placeholder="Buscar por sabor, por exemplo, nozes ou morango"
+                    class="w-full md:w-96 rounded-lg border border-slate-200 bg-white/80 px-4 py-2 shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-300"
+                  />
+                  <span
+                    id="matchCount"
+                    class="text-sm text-slate-500"
+                    aria-live="polite"
+                  ></span>
+                </div>
+              </header>
+
+              <main class="mx-auto max-w-6xl px-4 pb-16">
+                <!-- Monte o seu bolo -->
+                <section aria-labelledby="builder-title" class="mb-10">
+                  <div
+                    class="rounded-2xl border border-rose-100 bg-white/70 p-5 shadow-sm backdrop-blur"
+                  >
+                    <h2
+                      id="builder-title"
+                      class="text-xl font-medium text-(--deep)"
+                    >
+                      Monte o seu bolo
+                    </h2>
+                    <p class="mt-1 text-slate-600">
+                      Escolha uma massa e um recheio, o resultado aparece
+                      abaixo.
+                    </p>
+                    <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                      <div>
+                        <label for="massa" class="block text-sm text-slate-600"
+                          >Massa</label
+                        >
+                        <select
+                          id="massa"
+                          class="mt-1 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-rose-300"
+                        >
+                          <option>Tradicional</option>
+                          <option>Baunilha</option>
+                          <option>Chocolate</option>
+                          <option>Nozes</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label
+                          for="recheio"
+                          class="block text-sm text-slate-600"
+                          >Recheio</label
+                        >
+                        <select
+                          id="recheio"
+                          class="mt-1 w-full rounded-lg border border-slate-200 bg-white px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-rose-300"
+                        >
+                          <option>Chocolate</option>
+                          <option>Chocolate branco</option>
+                          <option>Prestígio</option>
+                          <option>Doce de leite</option>
+                          <option>Doce de leite com ameixa</option>
+                          <option>Geleia caseira de damascos</option>
+                          <option>Creme de nozes</option>
+                          <option>Baba de moça</option>
+                          <option>Morango com leite Ninho</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between gap-3">
+                      <p id="preview" class="text-base">
+                        Sugestão, massa tradicional com recheio de chocolate.
+                      </p>
+                      <button
+                        id="copyBtn"
+                        type="button"
+                        class="rounded-full bg-(--terracotta) px-6 py-3 text-center font-semibold text-(--white) hover:bg-(--deep) transition-colors focus:outline-none focus:ring-2 focus:ring-(--terracotta) focus:ring-offset-2 cursor-pointer"
+                      >
+                        Copiar sugestão
+                      </button>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Massas -->
+                <section aria-labelledby="massas-title" class="mb-10">
+                  <div class="flex items-center justify-between">
+                    <h2
+                      id="massas-title"
+                      class="text-xl font-medium text-(--deep)"
+                    >
+                      Massas
+                    </h2>
+                  </div>
+                  <ul class="mt-3 flex flex-wrap gap-2">
+                    <li><span class="flavor-item tag">Tradicional</span></li>
+                    <li><span class="flavor-item tag">Baunilha</span></li>
+                    <li><span class="flavor-item tag">Chocolate</span></li>
+                    <li><span class="flavor-item tag">Nozes</span></li>
+                  </ul>
+                </section>
+
+                <!-- Recheios -->
+                <section aria-labelledby="recheios-title" class="mb-10">
+                  <h2
+                    id="recheios-title"
+                    class="text-xl font-medium text-(--deep)"
+                  >
+                    Recheios
+                  </h2>
+                  <ul class="mt-3 flex flex-wrap gap-2">
+                    <li><span class="flavor-item tag">Chocolate</span></li>
+                    <li>
+                      <span class="flavor-item tag">Chocolate branco</span>
+                    </li>
+                    <li><span class="flavor-item tag">Prestígio</span></li>
+                    <li><span class="flavor-item tag">Doce de leite</span></li>
+                    <li>
+                      <span class="flavor-item tag"
+                        >Doce de leite com ameixa</span
+                      >
+                    </li>
+                    <li>
+                      <span class="flavor-item tag"
+                        >Geleia caseira de damascos</span
+                      >
+                    </li>
+                    <li><span class="flavor-item tag">Creme de nozes</span></li>
+                    <li><span class="flavor-item tag">Baba de moça</span></li>
+                    <li>
+                      <span class="flavor-item tag"
+                        >Morango com leite Ninho</span
+                      >
+                    </li>
+                  </ul>
+                </section>
+
+                <!-- Doces -->
+                <section aria-labelledby="doces-title" class="mb-10">
+                  <h2
+                    id="doces-title"
+                    class="text-xl font-medium text-(--deep)"
+                  >
+                    Doces
+                  </h2>
+                  <ul class="mt-3 flex flex-wrap gap-2">
+                    <li><span class="flavor-item tag">Brigadeiro</span></li>
+                    <li>
+                      <span class="flavor-item tag">Brigadeiro branco</span>
+                    </li>
+                    <li><span class="flavor-item tag">Beijinho</span></li>
+                    <li><span class="flavor-item tag">Bicho de pé</span></li>
+                    <li>
+                      <span class="flavor-item tag"
+                        >Brigadeiro de amendoim</span
+                      >
+                    </li>
+                    <li>
+                      <span class="flavor-item tag">Brigadeiro de Nutella</span>
+                    </li>
+                    <li><span class="flavor-item tag">Churros</span></li>
+                    <li><span class="flavor-item tag">Preto e branco</span></li>
+                    <li><span class="flavor-item tag">Nozes</span></li>
+                    <li>
+                      <span class="flavor-item tag">Castanha do Pará</span>
+                    </li>
+                  </ul>
+                </section>
+
+                <!-- Bombons -->
+                <section aria-labelledby="bombons-title" class="mb-10">
+                  <h2
+                    id="bombons-title"
+                    class="text-xl font-medium text-(--deep)"
+                  >
+                    Bombons
+                  </h2>
+                  <p class="mt-1 text-slate-600">
+                    Caixinha de chocolate recheada com
+                  </p>
+                  <ul class="mt-3 flex flex-wrap gap-2">
+                    <li><span class="flavor-item tag">Doce de leite</span></li>
+                    <li><span class="flavor-item tag">Ganache</span></li>
+                    <li>
+                      <span class="flavor-item tag">Geleia de morango</span>
+                    </li>
+                    <li><span class="flavor-item tag">Uva</span></li>
+                    <li><span class="flavor-item tag">Morango</span></li>
+                    <li><span class="flavor-item tag">Nozes</span></li>
+                    <li><span class="flavor-item tag">Damasco</span></li>
+                    <li><span class="flavor-item tag">Figo</span></li>
+                  </ul>
+                </section>
+
+                <!-- Além deles, bolos prontos -->
+                <section aria-labelledby="alemde-title">
+                    <h2
+                      id="alemde-title"
+                      class="text-xl font-medium text-(--deep)"
+                    >
+                      Bolos prontos
+                    </h2>
+                    <div class="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                      <article class="card">
+                        <h3 class="card-title">Bolo de cenoura</h3>
+                        <p class="card-text">
+                          Clássico macio com cobertura de chocolate.
+                        </p>
+                      </article>
+                      <article class="card">
+                        <h3 class="card-title">Bolo red velvet</h3>
+                        <p class="card-text">
+                          Massa aveludada com leve toque de cacau.
+                        </p>
+                      </article>
+                      <article class="card">
+                        <h3 class="card-title">Bolo bem casado</h3>
+                        <p class="card-text">
+                          Camadas delicadas com doce de leite cremoso.
+                        </p>
+                      </article>
+                    </div>
+                  </section>
+              </main>
+            </details>
 
             <details
               class="group rounded-2xl bg-(--cream) p-6 ring-1 ring-black/5"
@@ -1814,9 +2035,55 @@
         }, 3000);
       }
     </script>
+    <script>
+      // Filtro por texto
+      const filterInput = document.getElementById("filter");
+      const items = document.querySelectorAll(".flavor-item");
+      const matchCount = document.getElementById("matchCount");
 
+      function applyFilter() {
+        const q = filterInput.value.trim().toLowerCase();
+        let shown = 0;
+        items.forEach((el) => {
+          const name = el.textContent.toLowerCase();
+          const match = !q || name.includes(q);
+          el.parentElement.classList.toggle("hidden", !match);
+          if (match) shown += 1;
+        });
+        matchCount.textContent = q ? shown + " resultados" : "";
+      }
+      filterInput.addEventListener("input", applyFilter);
+
+      // Pré visualização do combo
+      const massa = document.getElementById("massa");
+      const recheio = document.getElementById("recheio");
+      const preview = document.getElementById("preview");
+      const copyBtn = document.getElementById("copyBtn");
+
+      function updatePreview() {
+        preview.textContent = `Sugestão, massa ${massa.value.toLowerCase()} com recheio de ${recheio.value.toLowerCase()}.`;
+      }
+      massa.addEventListener("change", updatePreview);
+      recheio.addEventListener("change", updatePreview);
+
+      copyBtn.addEventListener("click", async () => {
+        const text = preview.textContent;
+        try {
+          await navigator.clipboard.writeText(text);
+          copyBtn.textContent = "Copiado";
+          setTimeout(() => (copyBtn.textContent = "Copiar sugestão"), 1200);
+        } catch {
+          copyBtn.textContent = "Selecione e copie";
+        }
+      });
+
+      // Inicializa estados
+      applyFilter();
+      updatePreview();
+    </script>
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
     </script>
+    <script type="module" src="index.js" defer></script>
   </body>
 </html>

@@ -67,12 +67,48 @@
 }
 
 .hero-image {
-  -webkit-mask-image: url("images/ribbon.svg");
+  -webkit-mask-image: url("../images/ribbon.svg");
   -webkit-mask-repeat: repeat-x;
   -webkit-mask-size: auto 100%;
   -webkit-mask-position: bottom;
-  mask-image: url("images/ribbon.svg");
+  mask-image: url("../images/ribbon.svg");
   mask-repeat: repeat-x;
   mask-size: auto 100%;
   mask-position: bottom;
+}
+
+.tag {
+  @apply inline-block font-semibold rounded-full bg-(--terracotta)/80 text-(--cream) px-3 py-1 text-sm shadow-sm transition hover:bg-(--sand) hover:text-(--ink);
+}
+.card {
+  @apply rounded-2xl bg-(--terracotta)/80 p-4 shadow-sm backdrop-blur;
+}
+.card-title {
+  @apply text-lg font-medium text-(--cream) font-semibold;
+}
+.card-text {
+  @apply mt-1 text-(--cream);
+}
+
+/* Text selection styles that match the website's design */
+::selection {
+  background-color: var(--terracotta);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background-color: var(--terracotta);
+  color: var(--white);
+}
+
+/* Enhanced focus styles for form elements */
+input[type="search"]:focus,
+select:focus {
+  @apply ring-2 ring-(--terracotta)/50;
+}
+
+/* Ensure buttons maintain consistent selection and focus behavior */
+button:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
 }

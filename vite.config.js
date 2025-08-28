@@ -5,12 +5,12 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   root: '.',
   publicDir: 'public',
+  envDir: '.',
   build: {
     outDir: 'dist',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        firebase: resolve(__dirname, 'index.js'),
       }
     }
   },
