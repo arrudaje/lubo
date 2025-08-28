@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --terracotta: #c76457;
+    --peach: #d99162;
+    --deep: #a73130;
+    --cream: #fff3ea;
+    --sand: #ea9860;
+    --ink: #1f1511;
+    --white: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+  html,
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "hypatia-sans-pro", system-ui, sans-serif;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* type */
+  h1,
+  h2,
+  h3 {
+    line-height: 1.05;
+  }
+  h1 {
+    font-size: clamp(2.6rem, 5.6vw, 4.4rem);
+    font-weight: 900;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    font-weight: 900;
+  }
+  h3 {
+    font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+    font-weight: 800;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--deep);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon:hover {
+  stroke: var(--sand);
+}
+
+.hero-image {
+  -webkit-mask-image: url("images/ribbon.svg");
+  -webkit-mask-repeat: repeat-x;
+  -webkit-mask-size: auto 100%;
+  -webkit-mask-position: bottom;
+  mask-image: url("images/ribbon.svg");
+  mask-repeat: repeat-x;
+  mask-size: auto 100%;
+  mask-position: bottom;
+}

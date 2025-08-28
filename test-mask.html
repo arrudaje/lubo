@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Máscara CSS - iOS Safari</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #f0f0f0;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        .test-image {
+            width: 100%;
+            height: 400px;
+            margin: 20px 0;
+            position: relative;
+            background: #c76457;
+        }
+        
+        /* Test 1: SVG mask without mask-mode */
+        .test1 {
+            -webkit-mask-image: url("/images/ribbon.svg");
+            -webkit-mask-repeat: repeat-x;
+            -webkit-mask-size: auto 100%;
+            -webkit-mask-position: bottom;
+            mask-image: url("/images/ribbon.svg");
+            mask-repeat: repeat-x;
+            mask-size: auto 100%;
+            mask-position: bottom;
+        }
+        
+        /* Test 2: PNG mask without mask-mode */
+        .test2 {
+            -webkit-mask-image: url("/images/ribbon.png");
+            -webkit-mask-repeat: repeat-x;
+            -webkit-mask-size: auto 100%;
+            -webkit-mask-position: bottom;
+            mask-image: url("/images/ribbon.png");
+            mask-repeat: repeat-x;
+            mask-size: auto 100%;
+            mask-position: bottom;
+        }
+        
+        /* Test 3: Border-image fallback */
+        .test3 {
+            border-bottom: 40px solid transparent;
+            border-image: url("/images/ribbon.svg") 30 repeat;
+        }
+        
+        /* Test 4: Pseudo-element overlay */
+        .test4 {
+            overflow: hidden;
+        }
+        
+        .test4::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: url("/images/ribbon.svg") repeat-x bottom center;
+            background-size: auto 100%;
+        }
+        
+        .device-info {
+            background: #e0e0e0;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        
+        .status {
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        
+        .success {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .warning {
+            background: #ff9800;
+            color: white;
+        }
+        
+        .error {
+            background: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Teste de Máscara CSS para iOS Safari</h1>
+        
+        <div class="device-info">
+            <strong>Informações do Dispositivo:</strong>
+            <div id="deviceInfo"></div>
+        </div>
+        
+        <h2>Teste 1: SVG Mask (Solução Recomendada)</h2>
+        <div class="test-image test1"></div>
+        <p>Usa mask-image com SVG, sem mask-mode</p>
+        
+        <h2>Teste 2: PNG Mask</h2>
+        <div class="test-image test2"></div>
+        <p>Usa mask-image com PNG, sem mask-mode</p>
+        
+        <h2>Teste 3: Border-Image Fallback</h2>
+        <div class="test-image test3"></div>
+        <p>Usa border-image como alternativa</p>
+        
+        <h2>Teste 4: Pseudo-element Overlay</h2>
+        <div class="test-image test4"></div>
+        <p>Usa ::after com background-image</p>
+        
+        <h2>Diagnóstico:</h2>
+        <div id="diagnosis"></div>
+    </div>
+    
+    <script>
+        // Detectar informações do dispositivo
+        function getDeviceInfo() {
+            const ua = navigator.userAgent;
+            const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+            const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+            const isChrome = /Chrome/.test(ua) && /Google Inc/.test(navigator.vendor);
+            
+            let info = `User Agent: ${ua}<br>`;
+            info += `iOS: ${isIOS ? 'Sim' : 'Não'}<br>`;
+            info += `Safari: ${isSafari ? 'Sim' : 'Não'}<br>`;
+            info += `Chrome: ${isChrome ? 'Sim' : 'Não'}<br>`;
+            
+            // Detectar suporte a CSS mask
+            const supportsMask = CSS.supports('mask-image', 'url(test.png)') || 
+                                CSS.supports('-webkit-mask-image', 'url(test.png)');
+            info += `Suporte a CSS Mask: ${supportsMask ? 'Sim' : 'Não'}<br>`;
+            
+            document.getElementById('deviceInfo').innerHTML = info;
+            
+            // Diagnóstico
+            let diagnosis = '';
+            if (isIOS && isSafari) {
+                diagnosis = '<span class="status warning">iOS Safari Detectado</span><br>';
+                diagnosis += 'Recomendação: Use o Teste 1 (SVG mask) ou Teste 4 (pseudo-element)';
+            } else if (isSafari) {
+                diagnosis = '<span class="status warning">Safari Desktop Detectado</span><br>';
+                diagnosis += 'Recomendação: Use o Teste 1 (SVG mask)';
+            } else {
+                diagnosis = '<span class="status success">Navegador Compatível</span><br>';
+                diagnosis += 'Todos os métodos devem funcionar corretamente';
+            }
+            
+            document.getElementById('diagnosis').innerHTML = diagnosis;
+        }
+        
+        // Executar quando a página carregar
+        window.addEventListener('DOMContentLoaded', getDeviceInfo);
+    </script>
+</body>
+</html>
