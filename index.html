@@ -166,7 +166,7 @@
   </head>
   <body class="min-h-screen bg-(--cream) text-(--ink) antialiased">
     <!-- Top bar -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-(--cream)/50">
+    <header class="sticky top-0 z-10 backdrop-blur-md bg-(--cream)/50">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between py-3 sm:py-4">
           <!-- Brand -->
@@ -174,7 +174,7 @@
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="120 105 480 250"
-              class="w-[120px] sm:w-[150px]"
+              class="h-[60px] sm:h-[80px]"
             >
               <defs>
                 <style>
@@ -249,17 +249,19 @@
           </a>
 
           <!-- Nav Desktop -->
-          <nav class="hidden md:flex items-center gap-8 text-lg font-semibold">
-            <a href="#portfolio" class="text-(--deep) hover:text-(--sand)"
-              >Portfólio</a
-            >
-            <a href="#sobre" class="text-(--deep) hover:text-(--sand)"
-              >Sobre Lubô</a
-            >
-            <a href="#pedido" class="text-(--deep) hover:text-(--sand)"
-              >Pedidos</a
-            >
-            <a href="#faq" class="text-(--deep) hover:text-(--sand)">FAQ</a>
+          <nav class="flex items-center gap-4 md:gap-10 text-lg font-semibold">
+            <div class="hidden md:flex items-center gap-6">
+              <a href="#portfolio" class="text-(--deep) hover:text-(--sand)"
+                >Portfólio</a
+              >
+              <a href="#sobre" class="text-(--deep) hover:text-(--sand)"
+                >Sobre Lubô</a
+              >
+              <a href="#pedido" class="text-(--deep) hover:text-(--sand)"
+                >Pedidos</a
+              >
+              <a href="#faq" class="text-(--deep) hover:text-(--sand)">FAQ</a>
+            </div>
             <!-- Social Links -->
             <div class="flex items-center gap-4">
               <a
@@ -269,7 +271,7 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="2 2 21 21"
+                  viewBox="1 1 22 22"
                   class="icon"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -286,7 +288,7 @@
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="3 3 18 18"
+                  viewBox="2 2 20 20"
                   class="icon"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -310,7 +312,7 @@
                 xmlns="http://www.w3.org/2000/svg"
                 class="w-6 h-6"
                 fill="none"
-                viewBox="0 0 24 24"
+                viewBox="3 3 18 18"
                 stroke="currentColor"
               >
                 <path
@@ -335,9 +337,9 @@
         <!-- Mobile Navigation Menu -->
         <nav
           id="mobile-menu"
-          class="md:hidden hidden bg-(--cream)/70 backdrop-blur-md mt-4 rounded-2xl shadow-lg overflow-hidden"
+          class="w-full left-0 md:hidden hidden overflow-hidden"
         >
-          <div class="flex flex-col py-4">
+          <div class="flex flex-col py-4 text-lg font-semibold">
             <a
               href="#portfolio"
               class="px-6 py-3 text-(--deep) hover:bg-(--sand)/20 transition"
@@ -789,9 +791,7 @@
                   </svg>
                   <div>
                     <p class="font-semibold text-(--deep)">Entrega</p>
-                    <p class="text-sm text-(--ink)/70">
-                      Entrega em São Paulo
-                    </p>
+                    <p class="text-sm text-(--ink)/70">Entrega em São Paulo</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-3">
@@ -1216,33 +1216,33 @@
 
                 <!-- Além deles, bolos prontos -->
                 <section aria-labelledby="alemde-title">
-                    <h2
-                      id="alemde-title"
-                      class="text-xl font-medium text-(--deep)"
-                    >
-                      Bolos prontos
-                    </h2>
-                    <div class="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                      <article class="card">
-                        <h3 class="card-title">Bolo de cenoura</h3>
-                        <p class="card-text">
-                          Clássico macio com cobertura de chocolate.
-                        </p>
-                      </article>
-                      <article class="card">
-                        <h3 class="card-title">Bolo red velvet</h3>
-                        <p class="card-text">
-                          Massa aveludada com leve toque de cacau.
-                        </p>
-                      </article>
-                      <article class="card">
-                        <h3 class="card-title">Bolo bem casado</h3>
-                        <p class="card-text">
-                          Camadas delicadas com doce de leite cremoso.
-                        </p>
-                      </article>
-                    </div>
-                  </section>
+                  <h2
+                    id="alemde-title"
+                    class="text-xl font-medium text-(--deep)"
+                  >
+                    Bolos prontos
+                  </h2>
+                  <div class="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <article class="card">
+                      <h3 class="card-title">Bolo de cenoura</h3>
+                      <p class="card-text">
+                        Clássico macio com cobertura de chocolate.
+                      </p>
+                    </article>
+                    <article class="card">
+                      <h3 class="card-title">Bolo red velvet</h3>
+                      <p class="card-text">
+                        Massa aveludada com leve toque de cacau.
+                      </p>
+                    </article>
+                    <article class="card">
+                      <h3 class="card-title">Bolo bem casado</h3>
+                      <p class="card-text">
+                        Camadas delicadas com doce de leite cremoso.
+                      </p>
+                    </article>
+                  </div>
+                </section>
               </main>
             </details>
 
