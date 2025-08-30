@@ -379,11 +379,12 @@
         <div class="relative overflow-hidden bg-(--cream)">
           <div class="grid lg:grid-cols-3 h-[400px] lg:h-[760px]">
             <img
-              src="images/header.png"
+              id="header"
               alt="Bolo de casamento artístico em tons nude com flores naturais - Lubô Confeitaria"
-              class="hero-image h-full w-full object-cover absolute l-0 t-0 object-[80%_50%] lg:object-right"
+              class="hero-image h-full w-full object-cover absolute left-0 top-0 object-[80%_50%] lg:object-right after:bg-(--cream) after:h-full after:w-full after:block after:absolute after:left-0 after:top-0 after:z-10"
               loading="eager"
               fetchpriority="high"
+              onload=""
             />
             <!-- Copy -->
             <div
@@ -2085,5 +2086,6 @@
       document.getElementById("y").textContent = new Date().getFullYear();
     </script>
     <script type="module" src="index.js" defer></script>
+    <script type="module" src="site-images.js" defer></script>
   </body>
 </html>
