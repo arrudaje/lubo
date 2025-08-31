@@ -37,7 +37,7 @@
     />
     <meta
       property="og:image"
-      content="https://luboconfeitaria.com.br/images/bolocasamento.jpg"
+      content="https://luboconfeitaria.com.br/images/borboletasemstick.png"
     />
     <meta
       property="og:image:alt"
@@ -59,7 +59,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://luboconfeitaria.com.br/images/bolocasamento.jpg"
+      content="https://luboconfeitaria.com.br/images/borboletasemstick.png"
     />
 
     <!-- Mobile & PWA -->
@@ -417,6 +417,7 @@
       </div>
     </section>
 
+    <!-- Portfolio -->
     <section id="portfolio" class="py-20 sm:py-[8rem]">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -424,249 +425,14 @@
           <p class="mt-3 text-(--ink)">Confira nossos trabalhos!</p>
         </div>
 
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
-          <button
-            onclick="openCarousel('infantis')"
-            class="group relative overflow-hidden rounded-2xl bg-(--white) shadow-sm ring-1 ring-black/5 cursor-pointer transition-all hover:shadow-lg lg:col-start-1 lg:col-end-3"
-          >
-            <div class="aspect-[3/4]">
-              <img
-                src="images/baloes.jpg"
-                alt="Bolo infantil decorado com balões coloridos - Lubô Confeitaria"
-                class="h-full w-full object-cover transition group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0"
-            ></div>
-            <div
-              class="absolute bottom-3 left-3 rounded-full bg-(--cream)/70 px-3 py-1 text-base font-semibold text-(--deep)"
-            >
-              Infantis
-            </div>
-          </button>
-
-          <button
-            onclick="openCarousel('jovens')"
-            class="group relative overflow-hidden rounded-2xl bg-(--white) shadow-sm ring-1 ring-black/5 cursor-pointer transition-all hover:shadow-lg lg:col-start-3 lg:col-end-5"
-          >
-            <div class="aspect-[3/4]">
-              <img
-                src="images/gossipandglam.png"
-                alt="Bolo temático Gossip Girl para jovens - Lubô Confeitaria"
-                class="h-full w-full object-cover transition group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0"
-            ></div>
-            <div
-              class="absolute bottom-3 left-3 rounded-full bg-(--cream)/70 px-3 py-1 text-base font-semibold text-(--deep)"
-            >
-              Jovens
-            </div>
-          </button>
-
-          <button
-            onclick="openCarousel('adultos')"
-            class="group relative overflow-hidden rounded-2xl bg-(--white) shadow-sm ring-1 ring-black/5 cursor-pointer transition-all hover:shadow-lg lg:col-start-5 lg:col-end-7"
-          >
-            <div class="aspect-[3/4]">
-              <img
-                src="images/balvenie.png"
-                alt="Bolo masculino adulto com tema de whisky Balvenie - Lubô Confeitaria"
-                class="h-full w-full object-cover transition group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0"
-            ></div>
-            <div
-              class="absolute bottom-3 left-3 rounded-full bg-(--cream)/70 px-3 py-1 text-base font-semibold text-(--deep)"
-            >
-              Adultos
-            </div>
-          </button>
-
-          <button
-            onclick="openCarousel('ocasioes')"
-            class="group relative overflow-hidden rounded-2xl bg-(--white) shadow-sm ring-1 ring-black/5 cursor-pointer transition-all hover:shadow-lg lg:col-start-2 lg:col-end-4"
-          >
-            <div class="aspect-[3/4]">
-              <img
-                src="images/nataldouradoecobre.png"
-                alt="Bolo de Natal decorado em dourado e cobre - Lubô Confeitaria"
-                class="h-full w-full object-cover transition group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0"
-            ></div>
-            <div
-              class="absolute bottom-3 left-3 rounded-full bg-(--cream)/70 px-3 py-1 text-base font-semibold text-(--deep)"
-            >
-              Ocasiões
-            </div>
-          </button>
-
-          <button
-            onclick="openCarousel('corporativos')"
-            class="group relative overflow-hidden rounded-2xl bg-(--white) shadow-sm ring-1 ring-black/5 cursor-pointer transition-all hover:shadow-lg lg:col-start-4 lg:col-end-6"
-          >
-            <div class="aspect-[3/4]">
-              <img
-                src="images/adidas.png"
-                alt="Cookies Adidas - Lubô Confeitaria"
-                class="h-full w-full object-cover transition group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0"
-            ></div>
-            <div
-              class="absolute bottom-3 left-3 rounded-full bg-(--cream)/70 px-3 py-1 text-base font-semibold text-(--deep)"
-            >
-              Corporativos
-            </div>
-          </button>
+        <div
+          id="portfolio-buttons"
+          class="mt-10 flex flex-wrap gap-6 justify-center"
+        >
+          <!-- Buttons will be dynamically inserted here -->
         </div>
       </div>
     </section>
-
-    <!-- Carousel Popover Modal -->
-    <div id="carouselModal" class="fixed inset-0 z-[100] hidden">
-      <!-- Backdrop -->
-      <div
-        class="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onclick="closeCarousel()"
-      ></div>
-
-      <!-- Modal Content -->
-      <div class="absolute inset-4 sm:inset-10 lg:inset-20">
-        <div
-          class="relative h-full bg-(--white) rounded-3xl shadow-2xl overflow-hidden"
-        >
-          <!-- Header -->
-          <div
-            class="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-(--white) via-(--white)/95 to-transparent p-6 pb-12"
-          >
-            <div class="flex items-center justify-between">
-              <h3
-                id="carouselTitle"
-                class="text-2xl font-semibold text-(--deep)"
-              >
-                Categoria
-              </h3>
-              <button
-                onclick="closeCarousel()"
-                class="rounded-full bg-(--white) p-2 shadow-md hover:shadow-lg transition-shadow"
-                aria-label="Fechar"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-(--deep)"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Carousel Container -->
-          <div
-            class="relative h-full flex items-center justify-center px-6 py-10"
-          >
-            <!-- Previous Button -->
-            <button
-              id="prevBtn"
-              onclick="changeSlide(-1)"
-              class="absolute left-6 z-10 rounded-full bg-(--white)/90 p-3 shadow-lg hover:bg-(--white) transition-all hover:scale-110"
-              aria-label="Anterior"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-(--deep)"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-
-            <!-- Images Container -->
-            <div class="relative w-full max-w-4xl h-full overflow-hidden py-10">
-              <div
-                id="carouselImages"
-                class="flex h-full transition-transform duration-500 ease-out"
-              >
-                <!-- Images will be dynamically inserted here -->
-              </div>
-            </div>
-
-            <!-- Next Button -->
-            <button
-              id="nextBtn"
-              onclick="changeSlide(1)"
-              class="absolute right-6 z-10 rounded-full bg-(--white)/90 p-3 shadow-lg hover:bg-(--white) transition-all hover:scale-110"
-              aria-label="Próximo"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 text-(--deep)"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
-
-          <!-- Dots Indicator -->
-          <div
-            class="absolute bottom-6 left-0 right-0 flex justify-center gap-2"
-            id="dotsContainer"
-          >
-            <!-- Dots will be dynamically inserted here -->
-          </div>
-
-          <!-- Contact CTA -->
-          <div class="absolute bottom-16 left-0 right-0 flex justify-center">
-            <a
-              href="#pedido"
-              onclick="closeCarousel()"
-              class="rounded-full bg-(--terracotta) px-6 py-3 text-(--cream) hover:bg-(--deep) transition shadow-lg"
-            >
-              Fazer pedido
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- About -->
     <section id="sobre" class="py-20 sm:py-[8rem]">
@@ -719,31 +485,31 @@
           </div>
 
           <div
-            class="w-full lg:flex-1 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+            class="w-full lg:flex-1 grid gap-4 grid-rows-1 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
           >
             <img
-              src="images/lubo_perfil_noise.jpg"
+              id="lubo_perfil_noise"
               alt="Luciana Veiga, fundadora da Lubô Confeitaria, artista plástica e confeiteira"
-              class="aspect-[3/4] w-full rounded-2xl object-cover sm:col-span-2 lg:col-span-2 row-span-1 lg:row-span-3"
+              class="aspect-[3/4] w-full rounded-2xl object-cover sm:col-span-2 lg:col-span-2 row-span-1"
               loading="lazy"
             />
             <div
               class="grid gap-4 grid-cols-2 sm:grid-cols-1 lg:grid-rows-3 items-center sm:col-span-2 lg:col-span-1"
             >
               <img
-                src="images/ingredients.jpg"
+                id="ingredients"
                 alt="Ingredientes frescos e selecionados para confeitaria artesanal"
                 class="w-full rounded-2xl aspect-[4/3] object-cover object-[50%_20%]"
                 loading="lazy"
               />
               <img
-                src="images/sieve.jpg"
+                id="sieve"
                 alt="Processo artesanal de peneirar chocolate em pó na Lubô Confeitaria"
                 class="w-full rounded-2xl aspect-[4/3] object-cover object-[50%_30%]"
                 loading="lazy"
               />
               <img
-                src="images/cookies.png"
+                id="cookies"
                 alt="Cookies artesanais decorados da Lubô Confeitaria"
                 class="w-full rounded-2xl aspect-[4/3] object-cover col-span-2 sm:col-span-1"
                 loading="lazy"
@@ -821,129 +587,123 @@
             </div>
 
             <!-- Form Column -->
-            <div>
-              <form
-                id="orderForm"
-                class="space-y-6"
-                onsubmit="handleOrderSubmit(event)"
-              >
-                <div class="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <label
-                      for="name"
-                      class="block text-sm font-medium text-(--ink)"
-                    >
-                      Nome completo
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
-                      placeholder="Seu nome"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      for="phone"
-                      class="block text-sm font-medium text-(--ink)"
-                    >
-                      WhatsApp
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
-                      placeholder="(11) 98888-8888"
-                      maxlength="15"
-                      autocomplete="tel-national"
-                      inputmode="numeric"
-                      pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}"
-                      title="Formato: (11) 98888-8888 ou (11) 8888-8888"
-                    />
-                  </div>
-                </div>
-
+            <form id="orderForm" class="space-y-6">
+              <div class="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label
-                    for="email"
+                    for="name"
                     class="block text-sm font-medium text-(--ink)"
                   >
-                    E-mail
+                    Nome completo
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
+                    type="text"
+                    id="name"
+                    name="name"
                     required
                     class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
-                    placeholder="seu@email.com"
+                    placeholder="Seu nome"
                   />
                 </div>
-
-                <div class="grid gap-6 sm:grid-cols-2">
-                  <div>
-                    <label
-                      for="eventDate"
-                      class="block text-sm font-medium text-(--ink)"
-                    >
-                      Data do evento
-                    </label>
-                    <input
-                      type="date"
-                      id="eventDate"
-                      name="eventDate"
-                      required
-                      class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      for="servings"
-                      class="block text-sm font-medium text-(--ink)"
-                    >
-                      Número de pessoas
-                    </label>
-                    <input
-                      type="number"
-                      id="servings"
-                      name="servings"
-                      min="1"
-                      required
-                      class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
-                      placeholder="Ex: 30"
-                    />
-                  </div>
-                </div>
-
                 <div>
                   <label
-                    for="message"
+                    for="phone"
                     class="block text-sm font-medium text-(--ink)"
                   >
-                    Detalhes do pedido
+                    WhatsApp
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
                     required
                     class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
-                    placeholder="Descreva o tema, sabores preferidos, restrições alimentares e outros detalhes importantes..."
-                  ></textarea>
+                    placeholder="(11) 98888-8888"
+                    maxlength="15"
+                    autocomplete="tel-national"
+                    inputmode="numeric"
+                    pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}"
+                    title="Formato: (11) 98888-8888 ou (11) 8888-8888"
+                  />
                 </div>
+              </div>
 
-                <button
-                  type="submit"
-                  class="w-full rounded-full bg-(--terracotta) px-6 py-3 text-center font-semibold text-(--white) hover:bg-(--deep) transition-colors focus:outline-none focus:ring-2 focus:ring-(--terracotta) focus:ring-offset-2"
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-(--ink)"
                 >
-                  Enviar pedido
-                </button>
-              </form>
-            </div>
+                  E-mail
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                  placeholder="seu@email.com"
+                />
+              </div>
+
+              <div class="grid gap-6 sm:grid-cols-2">
+                <div>
+                  <label
+                    for="eventDate"
+                    class="block text-sm font-medium text-(--ink)"
+                  >
+                    Data do evento
+                  </label>
+                  <input
+                    type="date"
+                    id="eventDate"
+                    name="eventDate"
+                    required
+                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="servings"
+                    class="block text-sm font-medium text-(--ink)"
+                  >
+                    Número de pessoas
+                  </label>
+                  <input
+                    type="number"
+                    id="servings"
+                    name="servings"
+                    min="1"
+                    required
+                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                    placeholder="Ex: 30"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-(--ink)"
+                >
+                  Detalhes do pedido
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                  placeholder="Descreva o tema, sabores preferidos, restrições alimentares e outros detalhes importantes..."
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full rounded-full bg-(--terracotta) px-6 py-3 text-center font-semibold text-(--white) hover:bg-(--deep) transition-colors focus:outline-none focus:ring-2 focus:ring-(--terracotta) focus:ring-offset-2"
+              >
+                Enviar pedido
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -1090,7 +850,9 @@
                         </select>
                       </div>
                     </div>
-                    <div class="mt-4 flex items-center justify-between flex-col md:flex-row gap-3">
+                    <div
+                      class="mt-4 flex items-center justify-between flex-col md:flex-row gap-3"
+                    >
                       <p id="preview" class="text-base">
                         Sugestão, massa tradicional com recheio de chocolate.
                       </p>
@@ -1534,61 +1296,6 @@
     </footer>
 
     <script>
-      /**
-       * Toggle mobile menu visibility
-       */
-      function toggleMobileMenu() {
-        const menu = document.getElementById("mobile-menu");
-        const button = document.getElementById("mobile-menu-button");
-        const menuBars = button.querySelector(".menu-icon-bars");
-        const menuClose = button.querySelector(".menu-icon-close");
-
-        menu.classList.toggle("hidden");
-        const isOpen = !menu.classList.contains("hidden");
-
-        button.setAttribute("aria-expanded", isOpen);
-        menuBars.classList.toggle("hidden", isOpen);
-        menuClose.classList.toggle("hidden", !isOpen);
-      }
-
-      /**
-       * Close mobile menu
-       */
-      function closeMobileMenu() {
-        const menu = document.getElementById("mobile-menu");
-        const button = document.getElementById("mobile-menu-button");
-        const menuBars = button.querySelector(".menu-icon-bars");
-        const menuClose = button.querySelector(".menu-icon-close");
-
-        menu.classList.add("hidden");
-        button.setAttribute("aria-expanded", "false");
-        menuBars.classList.remove("hidden");
-        menuClose.classList.add("hidden");
-      }
-
-      // Add click event listener to mobile menu button
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuButton = document.getElementById("mobile-menu-button");
-        if (mobileMenuButton) {
-          mobileMenuButton.addEventListener("click", toggleMobileMenu);
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener("click", function (event) {
-          const menu = document.getElementById("mobile-menu");
-          const button = document.getElementById("mobile-menu-button");
-
-          if (
-            !menu.contains(event.target) &&
-            !button.contains(event.target) &&
-            !menu.classList.contains("hidden")
-          ) {
-            closeMobileMenu();
-          }
-        });
-      });
-    </script>
-    <script>
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", (e) => {
           const id = a.getAttribute("href").slice(1);
@@ -1601,491 +1308,13 @@
       });
     </script>
     <script>
-      // Carousel functionality
-      const categories = {
-        infantis: {
-          title: "Infantis",
-          images: [
-            { src: "images/baloes.jpg", alt: "Bolo com balões coloridos" },
-            { src: "images/pepa.png", alt: "Bolo da Peppa Pig" },
-            { src: "images/pinoquio.png", alt: "Bolo do Pinóquio" },
-            { src: "images/feirakids.png", alt: "Bolo infantil feira" },
-            { src: "images/meninas.jpg", alt: "Bolo para meninas" },
-            { src: "images/corujas.jpg", alt: "Bolo com corujas" },
-            {
-              src: "images/laranjasebaloes.png",
-              alt: "Bolo com laranjas e balões",
-            },
-            { src: "images/cerejas.jpg", alt: "Bolo com cerejas" },
-            { src: "images/passaro.jpg", alt: "Bolo com pássaro" },
-            {
-              src: "images/cachorrinhoeflores.png",
-              alt: "Bolo com cachorrinho e flores",
-            },
-            { src: "images/filipobananas.png", alt: "Bolo com bananas" },
-            { src: "images/perinhas.png", alt: "Bolo com peras" },
-            { src: "images/minnieVIC.png", alt: "Bolo com Minnie" },
-          ],
-        },
-        jovens: {
-          title: "Para Jovens",
-          images: [
-            { src: "images/gossipandglam.png", alt: "Bolo Gossip and Glam" },
-            { src: "images/bolo10.png", alt: "Bolo número 10" },
-            { src: "images/fcbspTime.png", alt: "Bolo time de futebol" },
-            { src: "images/llamas.jpg", alt: "Bolo com lhamas" },
-            {
-              src: "images/llamas-brigadeiros.jpg",
-              alt: "Brigadeiros de lhamas",
-            },
-            {
-              src: "images/docestyedye.png",
-              alt: "Doces com padrão de tyedye",
-            },
-          ],
-        },
-        adultos: {
-          title: "Para Adultos",
-          images: [
-            { src: "images/balvenie.png", alt: "Bolo Balvenie com charutos" },
-            { src: "images/bolobarboteco.png", alt: "Bolo bar e boteco" },
-            { src: "images/boloFGV.png", alt: "Bolo FGV" },
-            {
-              src: "images/picnicdefrutas.png",
-              alt: "Bolo picnic de frutas",
-            },
-            {
-              src: "images/boloflorzinhaepassaros.png",
-              alt: "Bolo com flores e pássaros",
-            },
-            {
-              src: "images/borboletasemstick.png",
-              alt: "Bolo com borboletas",
-            },
-            { src: "images/bolomalaepanela.png", alt: "Bolo mala e panela" },
-            {
-              src: "images/bolorosadefloreselaco.png",
-              alt: "Bolo rosa de flores e laço",
-            },
-          ],
-        },
-        ocasioes: {
-          title: "Ocasiões Especiais",
-          images: [
-            {
-              src: "images/nataldouradoecobre.png",
-              alt: "Bolo de Natal dourado e cobre",
-            },
-            {
-              src: "images/bonecodeneveNATal.png",
-              alt: "Bolo boneco de neve de Natal",
-            },
-            { src: "images/bolodenatal.png", alt: "Bolo de Natal" },
-            { src: "images/papainoelMINI.png", alt: "Mini bolo Papai Noel" },
-            { src: "images/batizado.png", alt: "Bolo de batizado" },
-            { src: "images/bolocasamento.jpg", alt: "Bolo de casamento" },
-            { src: "images/doces.png", alt: "Mesa de doces" },
-            {
-              src: "images/pascoaovoflorverde.png",
-              alt: "Ovo de páscoa com flor verde",
-            },
-            {
-              src: "images/ovopascoaovos.png",
-              alt: "Ovo de páscoa com ovos dentro",
-            },
-            {
-              src: "images/pascoacoelhobolonaked.png",
-              alt: "Bolo naked para Páscoa",
-            },
-          ],
-        },
-        corporativos: {
-          title: "Corporativos",
-          images: [{ src: "images/adidas.png", alt: "Bolo Adidas" }],
-        },
-      };
-
-      let currentCategory = null;
-      let currentSlide = 0;
-
-      /**
-       * Opens the carousel modal with the specified category
-       */
-      function openCarousel(category) {
-        currentCategory = categories[category];
-        currentSlide = 0;
-
-        if (!currentCategory) return;
-
-        // Update title
-        document.getElementById("carouselTitle").textContent =
-          currentCategory.title;
-
-        // Build images HTML
-        const imagesContainer = document.getElementById("carouselImages");
-        imagesContainer.innerHTML = currentCategory.images
-          .map(
-            (img) => `
-                <div class="min-w-full h-full flex items-center justify-center">
-                  <img 
-                    src="${img.src}" 
-                    alt="${img.alt}" 
-                    class="max-w-full max-h-full object-contain rounded-2xl shadow-xl"
-                  />
-                </div>
-              `
-          )
-          .join("");
-
-        // Build dots HTML
-        const dotsContainer = document.getElementById("dotsContainer");
-        dotsContainer.innerHTML = currentCategory.images
-          .map(
-            (_, index) => `
-                <button 
-                  onclick="goToSlide(${index})" 
-                  class="dot w-2 h-2 rounded-full transition-all ${
-                    index === 0
-                      ? "bg-(--terracotta) w-8"
-                      : "bg-(--terracotta)/30"
-                  }"
-                  aria-label="Ir para imagem ${index + 1}"
-                ></button>
-              `
-          )
-          .join("");
-
-        // Show modal with animation
-        const modal = document.getElementById("carouselModal");
-        modal.classList.remove("hidden");
-        modal.classList.add("flex", "items-center", "justify-center");
-        document.body.style.overflow = "hidden";
-
-        // Trigger animation
-        setTimeout(() => {
-          modal.querySelector(".absolute.inset-4").classList.add("animate-in");
-        }, 10);
-      }
-
-      /**
-       * Closes the carousel modal
-       */
-      function closeCarousel() {
-        const modal = document.getElementById("carouselModal");
-        modal.classList.add("hidden");
-        modal.classList.remove("flex", "items-center", "justify-center");
-        document.body.style.overflow = "";
-        currentCategory = null;
-        currentSlide = 0;
-      }
-
-      /**
-       * Changes to the next or previous slide
-       */
-      function changeSlide(direction) {
-        if (!currentCategory) return;
-
-        const totalSlides = currentCategory.images.length;
-        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-        updateCarousel();
-      }
-
-      /**
-       * Goes to a specific slide
-       */
-      function goToSlide(index) {
-        currentSlide = index;
-        updateCarousel();
-      }
-
-      /**
-       * Updates the carousel display
-       */
-      function updateCarousel() {
-        // Update image position
-        const imagesContainer = document.getElementById("carouselImages");
-        imagesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-        // Update dots
-        const dots = document.querySelectorAll("#dotsContainer .dot");
-        dots.forEach((dot, index) => {
-          if (index === currentSlide) {
-            dot.classList.add("bg-(--terracotta)", "w-8");
-            dot.classList.remove("bg-(--terracotta)/30");
-          } else {
-            dot.classList.remove("bg-(--terracotta)", "w-8");
-            dot.classList.add("bg-(--terracotta)/30");
-          }
-        });
-      }
-
-      // Keyboard navigation
-      document.addEventListener("keydown", (e) => {
-        if (currentCategory) {
-          if (e.key === "ArrowLeft") changeSlide(-1);
-          if (e.key === "ArrowRight") changeSlide(1);
-          if (e.key === "Escape") closeCarousel();
-        }
-      });
-
-      // Touch/swipe support for mobile
-      let touchStartX = 0;
-      let touchEndX = 0;
-
-      function handleTouchStart(e) {
-        touchStartX = e.changedTouches[0].screenX;
-      }
-
-      function handleTouchEnd(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-      }
-
-      function handleSwipe() {
-        if (touchEndX < touchStartX - 50) changeSlide(1); // Swipe left
-        if (touchEndX > touchStartX + 50) changeSlide(-1); // Swipe right
-      }
-
-      // Add touch listeners to carousel when it exists
-      document.addEventListener("DOMContentLoaded", () => {
-        const carouselImages = document.getElementById("carouselImages");
-        if (carouselImages) {
-          carouselImages.addEventListener("touchstart", handleTouchStart);
-          carouselImages.addEventListener("touchend", handleTouchEnd);
-        }
-      });
-    </script>
-    <script>
-      /**
-       * Formats a Brazilian phone number as user types
-       * Handles both mobile (11 digits) and landline (10 digits) formats
-       */
-      function formatBrazilianPhone(value) {
-        // Remove all non-numeric characters
-        const numbers = value.replace(/\D/g, "");
-
-        // Limit to 11 digits (2 for area code + 9 for mobile)
-        const truncated = numbers.substring(0, 11);
-
-        // Format based on length
-        if (truncated.length === 0) {
-          return "";
-        } else if (truncated.length <= 2) {
-          return `(${truncated}`;
-        } else if (truncated.length === 3) {
-          return `(${truncated.substring(0, 2)}) ${truncated.substring(2)}`;
-        } else if (truncated.length <= 6) {
-          return `(${truncated.substring(0, 2)}) ${truncated.substring(2)}`;
-        } else if (truncated.length <= 10) {
-          // Format as landline: (XX) XXXX-XXXX
-          const areaCode = truncated.substring(0, 2);
-          const firstPart = truncated.substring(2, 6);
-          const secondPart = truncated.substring(6);
-          return `(${areaCode}) ${firstPart}${secondPart ? "-" + secondPart : ""}`;
-        } else {
-          // Format as mobile: (XX) 9XXXX-XXXX
-          const areaCode = truncated.substring(0, 2);
-          const firstPart = truncated.substring(2, 7);
-          const secondPart = truncated.substring(7);
-          return `(${areaCode}) ${firstPart}${secondPart ? "-" + secondPart : ""}`;
-        }
-      }
-
-      /**
-       * Handles phone input formatting
-       */
-      function handlePhoneInput(event) {
-        const input = event.target;
-        const cursorPosition = input.selectionStart;
-        const previousLength = input.value.length;
-
-        // Format the phone number
-        const formatted = formatBrazilianPhone(input.value);
-        input.value = formatted;
-
-        // Adjust cursor position after formatting
-        const newLength = formatted.length;
-        const lengthDiff = newLength - previousLength;
-
-        // Try to maintain cursor position intelligently
-        if (event.inputType === "deleteContentBackward") {
-          // When deleting, keep cursor at same position
-          input.setSelectionRange(cursorPosition, cursorPosition);
-        } else {
-          // When typing, advance cursor by the difference
-          const newPosition = cursorPosition + lengthDiff;
-          input.setSelectionRange(newPosition, newPosition);
-        }
-      }
-
-      /**
-       * Handles paste event on phone input
-       */
-      function handlePhonePaste(event) {
-        event.preventDefault();
-
-        const input = event.target;
-        const pastedData = (
-          event.clipboardData || window.clipboardData
-        ).getData("text");
-
-        // Format the pasted data
-        input.value = formatBrazilianPhone(pastedData);
-      }
-
-      /**
-       * Initialize phone number formatting
-       */
-      function initPhoneFormatting() {
-        const phoneInput = document.getElementById("phone");
-
-        if (phoneInput) {
-          // Add input event listener for real-time formatting
-          phoneInput.addEventListener("input", handlePhoneInput);
-
-          // Add paste event listener for formatted pasting
-          phoneInput.addEventListener("paste", handlePhonePaste);
-
-          // Add keydown listener to handle special cases
-          phoneInput.addEventListener("keydown", function (event) {
-            // Allow backspace, delete, tab, escape, enter
-            if (
-              [8, 9, 27, 13, 46].indexOf(event.keyCode) !== -1 ||
-              // Allow Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
-              (event.keyCode === 65 && event.ctrlKey === true) ||
-              (event.keyCode === 67 && event.ctrlKey === true) ||
-              (event.keyCode === 86 && event.ctrlKey === true) ||
-              (event.keyCode === 88 && event.ctrlKey === true)
-            ) {
-              return;
-            }
-
-            // Ensure that it's a number and stop the keypress if not
-            if (
-              (event.shiftKey || event.keyCode < 48 || event.keyCode > 57) &&
-              (event.keyCode < 96 || event.keyCode > 105)
-            ) {
-              event.preventDefault();
-            }
-          });
-        }
-      }
-
-      // Initialize phone formatting when DOM is loaded
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initPhoneFormatting);
-      } else {
-        // DOM is already loaded
-        initPhoneFormatting();
-      }
-
-      /**
-       * Handles the order form submission
-       */
-      function handleOrderSubmit(event) {
-        event.preventDefault();
-
-        const form = event.target;
-        const formData = new FormData(form);
-
-        // Get form values
-        const name = formData.get("name");
-        const phone = formData.get("phone");
-        const email = formData.get("email");
-        const eventDate = formData.get("eventDate");
-        const servings = formData.get("servings");
-        const message = formData.get("message");
-
-        const whatsappMessage = encodeURIComponent(
-          `*NOVO PEDIDO - Lubô Confeitaria*\n` +
-            `------------------------\n\n` +
-            `*Nome:* ${name}\n` +
-            `*WhatsApp:* ${phone}\n` +
-            `*E-mail:* ${email}\n` +
-            `*Data do evento:* ${new Date(eventDate).toLocaleDateString("pt-BR")}\n` +
-            `*Número de pessoas:* ${servings}\n\n` +
-            `*Detalhes do pedido:*\n${message}\n\n` +
-            `------------------------\n` +
-            `Mensagem enviada via site`
-        );
-
-        // Open WhatsApp with pre-filled message
-        window.open(
-          `https://wa.me/5511988137150?text=${whatsappMessage}`,
-          "_blank"
-        );
-
-        // Show success message
-        const button = form.querySelector('button[type="submit"]');
-        const originalText = button.textContent;
-        button.textContent = "✓ Redirecionando para WhatsApp...";
-        button.disabled = true;
-        button.classList.add("opacity-75");
-
-        // Reset form after 3 seconds
-        setTimeout(() => {
-          form.reset();
-          button.textContent = originalText;
-          button.disabled = false;
-          button.classList.remove("opacity-75");
-
-          // Optional: Show a success notification
-          alert(
-            "Obrigado pelo seu interesse! Continue a conversa no WhatsApp para finalizar seu pedido."
-          );
-        }, 3000);
-      }
-    </script>
-    <script>
-      // Filtro por texto
-      const filterInput = document.getElementById("filter");
-      const items = document.querySelectorAll(".flavor-item");
-      const matchCount = document.getElementById("matchCount");
-
-      function applyFilter() {
-        const q = filterInput.value.trim().toLowerCase();
-        let shown = 0;
-        items.forEach((el) => {
-          const name = el.textContent.toLowerCase();
-          const match = !q || name.includes(q);
-          el.parentElement.classList.toggle("hidden", !match);
-          if (match) shown += 1;
-        });
-        matchCount.textContent = q ? shown + " resultados" : "";
-      }
-      filterInput.addEventListener("input", applyFilter);
-
-      // Pré visualização do combo
-      const massa = document.getElementById("massa");
-      const recheio = document.getElementById("recheio");
-      const preview = document.getElementById("preview");
-      const copyBtn = document.getElementById("copyBtn");
-
-      function updatePreview() {
-        preview.textContent = `Sugestão, massa ${massa.value.toLowerCase()} com recheio de ${recheio.value.toLowerCase()}.`;
-      }
-      massa.addEventListener("change", updatePreview);
-      recheio.addEventListener("change", updatePreview);
-
-      copyBtn.addEventListener("click", async () => {
-        const text = preview.textContent;
-        try {
-          await navigator.clipboard.writeText(text);
-          copyBtn.textContent = "Copiado";
-          setTimeout(() => (copyBtn.textContent = "Copiar sugestão"), 1200);
-        } catch {
-          copyBtn.textContent = "Selecione e copie";
-        }
-      });
-
-      // Inicializa estados
-      applyFilter();
-      updatePreview();
-    </script>
-    <script>
       document.getElementById("y").textContent = new Date().getFullYear();
     </script>
     <script type="module" src="index.js" defer></script>
+    <script type="module" src="menu.js" defer></script>
     <script type="module" src="site-images.js" defer></script>
+    <script type="module" src="carousel.js" defer></script>
+    <script type="module" src="order.js" defer></script>
+    <script type="module" src="filter.js" defer></script>
   </body>
 </html>

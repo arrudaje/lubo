@@ -84,7 +84,7 @@
   @apply rounded-2xl bg-(--terracotta)/80 p-4 shadow-sm backdrop-blur;
 }
 .card-title {
-  @apply text-lg font-medium text-(--cream) font-semibold;
+  @apply text-lg text-(--cream) font-semibold;
 }
 .card-text {
   @apply mt-1 text-(--cream);
