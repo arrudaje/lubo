@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-      Lubô Confeitaria • Confeitaria Artística desde 1995
-    </title>
+    <title>Lubô Confeitaria • Confeitaria Artística desde 1995</title>
     <meta
       name="description"
       content="Lubô Confeitaria Artística em São Paulo desde 1995. Bolos artísticos personalizados, cupcakes, cookies e doces para aniversários, casamentos e eventos."
@@ -77,8 +75,123 @@
     <link rel="dns-prefetch" href="https://use.typekit.net" />
 
     <!-- Fonts with font-display for better performance -->
-    <link rel="stylesheet" href="https://use.typekit.net/pew7lem.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/pew7lem.css" defer />
+    <style>
+      @import "tailwindcss";
+
+      @layer base {
+        :root {
+          --terracotta: #c76457;
+          --peach: #d99162;
+          --deep: #a73130;
+          --cream: #fff3ea;
+          --sand: #ea9860;
+          --ink: #1f1511;
+          --white: #ffffff;
+        }
+
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          border-radius: 0;
+        }
+        html,
+        body {
+          background: var(--cream);
+          color: var(--ink);
+          font-family: "hypatia-sans-pro", system-ui, sans-serif;
+        }
+        img {
+          max-width: 100%;
+          display: block;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
+        /* type */
+        h1,
+        h2,
+        h3 {
+          line-height: 1.05;
+        }
+        h1 {
+          font-size: clamp(2.6rem, 5.6vw, 4.4rem);
+          font-weight: 900;
+        }
+        h2 {
+          font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+          font-weight: 900;
+        }
+        h3 {
+          font-size: clamp(1.2rem, 2.2vw, 1.4rem);
+          font-weight: 800;
+        }
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        stroke: var(--deep);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .icon:hover {
+        stroke: var(--sand);
+      }
+
+      .hero-image {
+        -webkit-mask-image: url("../images/ribbon.svg");
+        -webkit-mask-repeat: repeat-x;
+        -webkit-mask-size: auto 100%;
+        -webkit-mask-position: bottom;
+        mask-image: url("../images/ribbon.svg");
+        mask-repeat: repeat-x;
+        mask-size: auto 100%;
+        mask-position: bottom;
+      }
+
+      .tag {
+        @apply inline-block font-semibold rounded-full bg-(--terracotta)/80 text-(--cream) px-3 py-1 text-sm shadow-sm transition hover:bg-(--sand) hover:text-(--ink);
+      }
+      .card {
+        @apply rounded-2xl bg-(--terracotta)/80 p-4 shadow-sm backdrop-blur;
+      }
+      .card-title {
+        @apply text-lg text-(--cream) font-semibold;
+      }
+      .card-text {
+        @apply mt-1 text-(--cream);
+      }
+
+      /* Text selection styles that match the website's design */
+      ::selection {
+        background-color: var(--terracotta);
+        color: var(--white);
+      }
+
+      ::-moz-selection {
+        background-color: var(--terracotta);
+        color: var(--white);
+      }
+
+      /* Enhanced focus styles for form elements */
+      input[type="search"]:focus,
+      select:focus {
+        @apply ring-2 ring-(--terracotta)/50;
+      }
+
+      /* Ensure buttons maintain consistent selection and focus behavior */
+      button:focus-visible {
+        outline: 2px solid var(--terracotta);
+        outline-offset: 2px;
+      }
+    </style>
 
     <!-- JSON-LD Structured Data for LocalBusiness -->
     <script type="application/ld+json">
@@ -169,7 +282,11 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between py-3 sm:py-4">
           <!-- Brand -->
-          <a href="#" class="flex items-center gap-3">
+          <a
+            href="#"
+            class="flex items-center gap-3"
+            aria-label="Lubô Confeitaria"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="120 105 480 250"
@@ -267,6 +384,7 @@
                 href="https://wa.me/5511988137150"
                 target="_blank"
                 rel="noopener"
+                aria-label="Fale conosco no WhatsApp"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -284,6 +402,7 @@
                 href="https://instagram.com/lubo.confeitaria"
                 target="_blank"
                 rel="noopener"
+                aria-label="Siga-nos no Instagram"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -401,12 +520,12 @@
               <div class="flex flex-wrap gap-3">
                 <a
                   href="#portfolio"
-                  class="rounded-full border border-(--terracotta) px-5 py-2 text-(--terracotta) hover:bg-(--deep) hover:text-(--white) transition"
+                  class="rounded-full border border-(--deep) px-5 py-2 text-(--deep) hover:bg-(--terracotta) hover:text-(--white) transition"
                   >Portfólio</a
                 >
                 <a
                   href="#pedido"
-                  class="rounded-full bg-(--terracotta) px-5 py-2 text-(--white) hover:bg-(--deep) transition"
+                  class="rounded-full bg-(--deep) px-5 py-2 text-(--white) hover:bg-(--terracotta) transition"
                   >Peça já!</a
                 >
               </div>
@@ -477,9 +596,10 @@
             <div class="mt-8 flex gap-3">
               <a
                 href="#pedido"
-                class="rounded-full bg-(--terracotta) px-5 py-2 text-(--white) hover:bg-(--deep) transition"
-                >Peça já!</a
+                class="rounded-full bg-(--deep) px-5 py-2 text-(--white) hover:bg-(--terracotta) transition"
               >
+                Peça já!
+              </a>
             </div>
           </div>
 
@@ -600,7 +720,7 @@
                     id="name"
                     name="name"
                     required
-                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--deep) focus:outline-none focus:ring-1 focus:ring-(--deep)"
                     placeholder="Seu nome"
                   />
                 </div>
@@ -616,7 +736,7 @@
                     id="phone"
                     name="phone"
                     required
-                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--deep) focus:outline-none focus:ring-1 focus:ring-(--deep)"
                     placeholder="(11) 98888-8888"
                     maxlength="15"
                     autocomplete="tel-national"
@@ -639,7 +759,7 @@
                   id="email"
                   name="email"
                   required
-                  class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                  class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--deep) focus:outline-none focus:ring-1 focus:ring-(--deep)"
                   placeholder="seu@email.com"
                 />
               </div>
@@ -657,7 +777,7 @@
                     id="eventDate"
                     name="eventDate"
                     required
-                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--deep) focus:outline-none focus:ring-1 focus:ring-(--deep)"
                   />
                 </div>
                 <div>
@@ -673,7 +793,7 @@
                     name="servings"
                     min="1"
                     required
-                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                    class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--deep) focus:outline-none focus:ring-1 focus:ring-(--deep)"
                     placeholder="Ex: 30"
                   />
                 </div>
@@ -691,14 +811,14 @@
                   name="message"
                   rows="4"
                   required
-                  class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--terracotta) focus:outline-none focus:ring-1 focus:ring-(--terracotta)"
+                  class="mt-2 block w-full rounded-xl border border-gray-200 px-4 py-3 text-(--ink) focus:border-(--deep) focus:outline-none focus:ring-1 focus:ring-(--deep)"
                   placeholder="Descreva o tema, sabores preferidos, restrições alimentares e outros detalhes importantes..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                class="w-full rounded-full bg-(--terracotta) px-6 py-3 text-center font-semibold text-(--white) hover:bg-(--deep) transition-colors focus:outline-none focus:ring-2 focus:ring-(--terracotta) focus:ring-offset-2"
+                class="w-full rounded-full bg-(--deep) px-6 py-3 text-center font-semibold text-(--white) hover:bg-(--terracotta) transition-colors focus:outline-none focus:ring-2 focus:ring-(--deep) focus:ring-offset-2 cursor-pointer"
               >
                 Enviar pedido
               </button>
@@ -731,7 +851,7 @@
                 >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-(--terracotta) transition-transform group-open:rotate-180"
+                  class="h-5 w-5 text-(--deep) transition-transform group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -761,7 +881,7 @@
                 <span>Quais são os sabores de bolo disponíveis?</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-(--terracotta) transition-transform group-open:rotate-180"
+                  class="h-5 w-5 text-(--deep) transition-transform group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -858,7 +978,7 @@
                       <button
                         id="copyBtn"
                         type="button"
-                        class="rounded-full bg-(--terracotta) px-6 py-3 text-center font-semibold text-(--white) hover:bg-(--deep) transition-colors focus:outline-none focus:ring-2 focus:ring-(--terracotta) focus:ring-offset-2 cursor-pointer"
+                        class="rounded-full bg-(--deep) px-6 py-3 text-center font-semibold text-(--white) hover:bg-(--terracotta) transition-colors focus:outline-none focus:ring-2 focus:ring-(--deep) focus:ring-offset-2 cursor-pointer"
                       >
                         Copiar sugestão
                       </button>
@@ -1017,7 +1137,7 @@
                 <span>Vocês fazem entrega em toda São Paulo?</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-(--terracotta) transition-transform group-open:rotate-180"
+                  class="h-5 w-5 text-(--deep) transition-transform group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1046,7 +1166,7 @@
                 <span>Atendem restrições alimentares e alergias?</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-(--terracotta) transition-transform group-open:rotate-180"
+                  class="h-5 w-5 text-(--deep) transition-transform group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1088,7 +1208,7 @@
                 >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-(--terracotta) transition-transform group-open:rotate-180"
+                  class="h-5 w-5 text-(--deep) transition-transform group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1119,7 +1239,7 @@
                 <span>Quais formas de pagamento são aceitas?</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-(--terracotta) transition-transform group-open:rotate-180"
+                  class="h-5 w-5 text-(--deep) transition-transform group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -1146,7 +1266,7 @@
               href="https://wa.me/5511988137150"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 rounded-full bg-(--terracotta) px-6 py-3 text-(--white) hover:bg-(--deep) transition"
+              class="inline-flex items-center gap-2 rounded-full bg-(--deep) px-6 py-3 text-(--white) hover:bg-(--terracotta) transition"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1230,19 +1350,21 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <h4 class="text-lg font-semibold text-(--deep)">
+            <h3 class="text-lg font-semibold text-(--deep)">
               Lubô confeitaria
-            </h4>
-            <p class="mt-3 text-sm text-(--ink)/70">São Paulo, SP</p>
+            </h3>
+            <p class="mt-3 text-sm text-(--ink)/70 py-1 inline-block">
+              São Paulo, SP
+            </p>
           </div>
           <div>
-            <h4 class="text-lg font-semibold text-(--deep)">Contato</h4>
+            <h3 class="text-lg font-semibold text-(--deep)">Contato</h3>
             <p class="mt-3 text-sm text-(--ink)/70">
               <a
                 href="mailto:luboconfeitaria@gmail.com"
                 target="_blank"
                 rel="noopener"
-                class="text-(--deep) hover:text-(--sand) transition"
+                class="text-(--deep) hover:text-(--sand) transition py-1 inline-block"
               >
                 luboconfeitaria@gmail.com
               </a>
@@ -1252,17 +1374,17 @@
                 href="https://wa.me/5511988137150"
                 target="_blank"
                 rel="noopener"
-                class="text-(--deep) hover:text-(--sand) transition"
+                class="text-(--deep) hover:text-(--sand) transition py-1 inline-block"
               >
                 +55 11 98813-7150
               </a>
             </p>
           </div>
           <div>
-            <h4 class="text-lg font-semibold text-(--deep)">Siga-nos</h4>
+            <h3 class="text-lg font-semibold text-(--deep)">Siga-nos</h3>
             <div class="mt-3 flex gap-3">
               <a
-                class="rounded-full bg-(--terracotta)/10 p-2 hover:bg-(--terracotta)/20"
+                class="rounded-full bg-(--deep)/10 p-2 hover:bg-(--deep)/20"
                 href="https://instagram.com/lubo.confeitaria"
                 target="_blank"
                 rel="noopener noreferrer"
