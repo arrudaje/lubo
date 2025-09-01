@@ -39,15 +39,18 @@ async function openCarousel(category) {
     images,
   };
 
+  const imagesContainer = document.getElementById("carouselImages");
+  imagesContainer.innerHTML = "";
+  const dotsContainer = document.getElementById("dotsContainer");
+  dotsContainer.innerHTML = "";
+
   // Build images HTML
   for (const imageIndex in images) {
-    const imagesContainer = document.getElementById("carouselImages");
     const image = images[imageIndex];
     buildImage(image).then((imageElement) => {
       imagesContainer.appendChild(imageElement);
     });
 
-    const dotsContainer = document.getElementById("dotsContainer");
     dotsContainer.appendChild(buildDot(Number(imageIndex)));
   }
 
