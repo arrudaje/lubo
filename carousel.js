@@ -153,7 +153,7 @@ async function buildButton(category) {
   );
   const button = document.createElement("button");
   button.className =
-    "group relative overflow-hidden rounded-2xl bg-(--white) shadow-sm ring-1 ring-black/5 cursor-pointer transition-all hover:shadow-lg flex-0 basis-1/4";
+    "group relative overflow-hidden rounded-2xl bg-(--white) shadow-sm ring-1 ring-black/5 cursor-pointer transition-all hover:shadow-lg flex-0 basis-full sm:basis-1/3 lg:basis-1/4";
   button.dataset.order = category.order;
   button.addEventListener("click", () => openCarousel(category));
   button.innerHTML = `<div class="aspect-[3/4]">
@@ -168,7 +168,7 @@ async function buildButton(category) {
               class="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0"
             ></div>
             <div
-              class="absolute bottom-3 left-3 rounded-full bg-(--cream)/70 px-3 py-1 text-base font-semibold text-(--deep)"
+              class="absolute rounded-full bg-(--cream)/70 left-0 bottom-0 m-3 px-2 lg:px-3 py-1 text-base sm:text-xs lg:text-base font-semibold text-(--deep)"
             >
               ${category.title}
             </div>`;
