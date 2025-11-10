@@ -1,4 +1,4 @@
-import { ref, getDownloadURL, list, getBlob, listAll } from "firebase/storage";
+import { ref, getDownloadURL, list, getBlob } from "firebase/storage";
 import { storage } from "./index.js";
 
 let currentCategory = null;
@@ -374,6 +374,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   for (const category of portfolio.prefixes) {
     const categoryMeta = await getMetadata(category.name);
 
+    if (categoryMeta.hidden) continue;
+    
     const cat = {
       images: getPortfolioImages(category),
       key: category.name,
