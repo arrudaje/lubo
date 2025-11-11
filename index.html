@@ -200,6 +200,59 @@
         outline: 2px solid var(--terracotta);
         outline-offset: 2px;
       }
+
+      @keyframes swing-top-left {
+        0% {
+          transform: rotate(0deg);
+          transform-origin: top left;
+        }
+        10% {
+          transform: rotate(7deg);
+          transform-origin: top left;
+        }
+        20% {
+          transform: rotate(-6deg);
+          transform-origin: top left;
+        }
+        30% {
+          transform: rotate(5deg);
+          transform-origin: top left;
+        }
+        40% {
+          transform: rotate(-4deg);
+          transform-origin: top left;
+        }
+        50% {
+          transform: rotate(3deg);
+          transform-origin: top left;
+        }
+        60% {
+          transform: rotate(-2deg);
+          transform-origin: top left;
+        }
+        70% {
+          transform: rotate(1deg);
+          transform-origin: top left;
+        }
+        80% {
+          transform: rotate(-0.5deg);
+          transform-origin: top left;
+        }
+        90% {
+          transform: rotate(0.2deg);
+          transform-origin: top left;
+        }
+        100% {
+          transform: rotate(0deg);
+          transform-origin: top left;
+        }
+      }
+
+      .swing-top-left {
+        animation: swing-top-left 1.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+        transform-origin: top left;
+        display: inline-block;
+      }
     </style>
 
     <!-- JSON-LD Structured Data for LocalBusiness -->
@@ -376,16 +429,27 @@
           <!-- Nav Desktop -->
           <nav class="flex items-center gap-4 md:gap-10 text-lg font-semibold">
             <div class="hidden md:flex items-center gap-6">
-              <a href="#portfolio" class="text-(--deep) hover:text-(--sand)"
-                >Portfólio</a
+              <a
+                id="natal"
+                href="#portfolio"
+                class="text-(--deep) hover:text-(--sand) relative hidden"
               >
-              <a href="#sobre" class="text-(--deep) hover:text-(--sand)"
-                >Sobre Lubô</a
-              >
-              <a href="#pedido" class="text-(--deep) hover:text-(--sand)"
-                >Pedidos</a
-              >
-              <a href="#faq" class="text-(--deep) hover:text-(--sand)">FAQ</a>
+                <img
+                  src="images/mistletoe.svg"
+                  class="w-6 h-6 absolute -left-3 -top-1 swing-top-left"
+                />
+                Natal 2025
+              </a>
+              <a href="#portfolio" class="text-(--deep) hover:text-(--sand)">
+                Portfólio
+              </a>
+              <a href="#sobre" class="text-(--deep) hover:text-(--sand)">
+                Sobre Lubô
+              </a>
+              <a href="#pedido" class="text-(--deep) hover:text-(--sand)">
+                Pedidos
+              </a>
+              <a href="#faq" class="text-(--deep) hover:text-(--sand)"> FAQ </a>
             </div>
             <!-- Social Links -->
             <div class="flex items-center gap-4">
@@ -570,11 +634,11 @@
               Sobre Lubô Confeitaria
             </h2>
             <p class="mt-6 max-w-prose text-(--ink)/80">
-              Sou a Luciana Veiga, fundadora da Lubô Confeitaria. A
-              nossa história começou em 1995, quando decidi criar um trabalho
-              que me permitisse estar mais perto da minha filha. Sou artista
-              plástica por formação, e encontrei nos bolos uma forma de unir o
-              balanço artístico, os afetos e a celebração.
+              Sou a Luciana Veiga, fundadora da Lubô Confeitaria. A nossa
+              história começou em 1995, quando decidi criar um trabalho que me
+              permitisse estar mais perto da minha filha. Sou artista plástica
+              por formação, e encontrei nos bolos uma forma de unir o balanço
+              artístico, os afetos e a celebração.
             </p>
             <p class="mt-6 max-w-prose text-(--ink)/80">
               Na Lubô Confeitaria, vejo o bolo como uma pequena escultura
@@ -1365,9 +1429,7 @@
             <p class="mt-3 text-sm text-(--ink)/70 py-1">
               Confeitaria Artística desde 1995
             </p>
-            <p class="text-sm text-(--ink)/70 py-1">
-              São Paulo, SP
-            </p>
+            <p class="text-sm text-(--ink)/70 py-1">São Paulo, SP</p>
           </div>
           <div>
             <h3 class="text-lg font-semibold text-(--deep)">Contato</h3>
@@ -1449,5 +1511,6 @@
     <script type="module" src="carousel.js" defer></script>
     <script type="module" src="order.js" defer></script>
     <script type="module" src="filter.js" defer></script>
+    <script type="module" src="flags.js" defer></script>
   </body>
 </html>

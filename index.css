@@ -112,3 +112,57 @@ button:focus-visible {
   outline: 2px solid var(--terracotta);
   outline-offset: 2px;
 }
+
+@keyframes swing-top-left {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top left;
+  }
+  10% {
+    transform: rotate(7deg);
+    transform-origin: top left;
+  }
+  20% {
+    transform: rotate(-6deg);
+    transform-origin: top left;
+  }
+  30% {
+    transform: rotate(5deg);
+    transform-origin: top left;
+  }
+  40% {
+    transform: rotate(-4deg);
+    transform-origin: top left;
+  }
+  50% {
+    transform: rotate(3deg);
+    transform-origin: top left;
+  }
+  60% {
+    transform: rotate(-2deg);
+    transform-origin: top left;
+  }
+  70% {
+    transform: rotate(1deg);
+    transform-origin: top left;
+  }
+  80% {
+    transform: rotate(-0.5deg);
+    transform-origin: top left;
+  }
+  90% {
+    transform: rotate(0.2deg);
+    transform-origin: top left;
+  }
+  100% {
+    transform: rotate(0deg);
+    transform-origin: top left;
+  }
+}
+
+.swing-top-left {
+  animation: swing-top-left 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  transform-origin: top left;
+  display: inline-block;
+}
+
