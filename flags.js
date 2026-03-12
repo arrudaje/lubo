@@ -10,4 +10,10 @@ fetchAndActivate(remoteConfig).then(() => {
         natal.classList.remove("hidden");
         natal_mobile.classList.remove("hidden");
     }
+    const pascoa = document.getElementById("pascoa");
+    const pascoa_mobile = document.getElementById("pascoa_mobile");
+    if (getFlag('PASCOA_2026')) {
+        pascoa.classList.remove("hidden");
+        pascoa_mobile.classList.remove("hidden");
+    }
 });
