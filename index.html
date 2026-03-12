@@ -254,6 +254,60 @@
         transform-origin: top left;
         display: inline-block;
       }
+
+      @keyframes swing-top-right {
+        0% {
+          transform: rotate(0deg);
+          transform-origin: top right;
+        }
+        10% {
+          transform: rotate(-7deg);
+          transform-origin: top right;
+        }
+        20% {
+          transform: rotate(6deg);
+          transform-origin: top right;
+        }
+        30% {
+          transform: rotate(-5deg);
+          transform-origin: top right;
+        }
+        40% {
+          transform: rotate(4deg);
+          transform-origin: top right;
+        }
+        50% {
+          transform: rotate(-3deg);
+          transform-origin: top right;
+        }
+        60% {
+          transform: rotate(2deg);
+          transform-origin: top right;
+        }
+        70% {
+          transform: rotate(-1deg);
+          transform-origin: top right;
+        }
+        80% {
+          transform: rotate(0.5deg);
+          transform-origin: top right;
+        }
+        90% {
+          transform: rotate(-0.2deg);
+          transform-origin: top right;
+        }
+        100% {
+          transform: rotate(0deg);
+          transform-origin: top right;
+        }
+      }
+
+      .swing-top-right {
+        animation: swing-top-right 1.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both
+          infinite;
+        transform-origin: top right;
+        display: inline-block;
+      }
     </style>
 
     <!-- JSON-LD Structured Data for LocalBusiness -->
@@ -450,7 +504,7 @@
               >
                 <img
                   src="images/carrot.svg"
-                  class="w-6 h-6 absolute -left-7 -top-1 swing-top-left"
+                  class="w-6 h-6 absolute -left-7 -top-1 swing-top-right"
                 />
                 Páscoa 2026
               </a>
@@ -565,7 +619,7 @@
             >
               <img
                 src="images/carrot.svg"
-                class="w-5 h-5 absolute left-0 top-2 swing-top-left"
+                class="w-5 h-5 absolute left-0 top-2 swing-top-right"
               />
               Páscoa 2026
             </a>
