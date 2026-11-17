@@ -25,5 +25,5 @@ export const analytics = getAnalytics(app);
 export const storage = getStorage(app);
 export const remoteConfig = getRemoteConfig(app);
 remoteConfig.settings = {
-  minimumFetchIntervalMillis: 0,
+  minimumFetchIntervalMillis: import.meta.env.DEV ? 0 : 3600000,
 };
