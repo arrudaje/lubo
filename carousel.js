@@ -32,27 +32,10 @@ async function openCarousel(category) {
   // Update title
   document.getElementById("carouselTitle").textContent = category.title;
 
-  const images = await category.images;
-
-  currentCategory = {
-    ...category,
-    images,
-  };
-
   const imagesContainer = document.getElementById("carouselImages");
-  imagesContainer.innerHTML = "";
+  imagesContainer.innerHTML = '<div class="w-full h-full flex items-center justify-center text-(--deep) font-medium text-lg animate-pulse">Carregando fotos...</div>';
   const dotsContainer = document.getElementById("dotsContainer");
   dotsContainer.innerHTML = "";
-
-  // Build images HTML
-  for (const imageIndex in images) {
-    const image = images[imageIndex];
-    buildImage(image).then((imageElement) => {
-      imagesContainer.appendChild(imageElement);
-    });
-
-    dotsContainer.appendChild(buildDot(Number(imageIndex)));
-  }
 
   // Show modal with animation
   const modal = document.getElementById("carouselModal");
@@ -64,6 +47,28 @@ async function openCarousel(category) {
   setTimeout(() => {
     modal.querySelector(".absolute.inset-4").classList.add("animate-in");
   }, 10);
+
+  // Lazy-load images only when category is opened
+  const images = category.getImages ? await category.getImages() : await category.images;
+
+  currentCategory = {
+    ...category,
+    images,
+  };
+
+  imagesContainer.innerHTML = "";
+
+  // Build images HTML in guaranteed sequential order
+  const imageElements = await Promise.all(images.map((image) => buildImage(image)));
+  imageElements.forEach((imageElement) => {
+    imagesContainer.appendChild(imageElement);
+  });
+
+  images.forEach((_, idx) => {
+    dotsContainer.appendChild(buildDot(idx));
+  });
+
+  updateCarousel();
 }
 
 /**
@@ -103,9 +108,9 @@ function goToSlide(index) {
 function updateCarousel() {
   // Update image position
   const imagesContainer = document.getElementById("carouselImages");
-  imagesContainer.addEventListener("touchstart", handleTouchStart);
-  imagesContainer.addEventListener("touchend", handleTouchEnd);
-  imagesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+  if (imagesContainer) {
+    imagesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
 
   // Update dots
   const dots = document.querySelectorAll("#dotsContainer .dot");
@@ -305,6 +310,11 @@ function initModal() {
             <!-- Images will be dynamically inserted here -->
         </div>
     `;
+  const carouselImages = modalCarouselContainerImages.querySelector("#carouselImages");
+  if (carouselImages) {
+    carouselImages.addEventListener("touchstart", handleTouchStart, { passive: true });
+    carouselImages.addEventListener("touchend", handleTouchEnd, { passive: true });
+  }
   modalCarouselContainer.appendChild(modalCarouselContainerImages);
 
   const modalCarouselContainerNext = document.createElement("button");
@@ -357,16 +367,20 @@ async function getPortfolioImages(category) {
   for (const imageRef of imageRefs) {
     if (isImage(imageRef.name)) {
       const image = await getDownloadURL(imageRef);
+      const cleanName = imageRef.name
+        .replace(/\.[^/.]+$/, "")
+        .replace(/[-_]/g, " ")
+        .trim();
       images.push({
         src: image,
-        alt: imageRef.name,
+        alt: `${cleanName} - Lubô Confeitaria`,
       });
     }
   }
   return images;
 }
 
-// Add touch listeners to carousel when it exists
+// Initialize portfolio categories with lazy image loading
 document.addEventListener("DOMContentLoaded", async () => {
   const categories = [];
   const portfolio = await list(ref(storage, "portfolio"));
@@ -375,9 +389,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const categoryMeta = await getMetadata(category.name);
 
     if (categoryMeta.hidden) continue;
-    
+
+    let cachedImages = null;
     const cat = {
-      images: getPortfolioImages(category),
+      getImages: async () => {
+        if (!cachedImages) {
+          cachedImages = await getPortfolioImages(category);
+        }
+        return cachedImages;
+      },
       key: category.name,
       ...categoryMeta,
     };
