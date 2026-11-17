@@ -183,6 +183,9 @@ async function buildButton(category) {
 async function initCategory(category) {
   const portfolioButtons = document.getElementById("portfolio-buttons");
   if (portfolioButtons) {
+    const skeletons = portfolioButtons.querySelectorAll(".skeleton-card");
+    skeletons.forEach((s) => s.remove());
+
     const button = await buildButton(category);
     const existingBefore = Array.from(portfolioButtons.children).filter(
       (child) => Number(child.dataset.order) < category.order
