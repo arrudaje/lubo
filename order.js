@@ -124,6 +124,28 @@ if (document.readyState === "loading") {
   initPhoneFormatting();
 }
 
+function showOrderToast(message) {
+  const existingToast = document.getElementById("order-toast");
+  if (existingToast) existingToast.remove();
+
+  const toast = document.createElement("div");
+  toast.id = "order-toast";
+  toast.className =
+    "fixed bottom-6 right-6 z-50 max-w-sm rounded-2xl bg-(--deep) text-(--white) px-5 py-4 shadow-xl flex items-center gap-3 transition-all duration-300";
+  toast.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-300 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+    </svg>
+    <p class="text-sm font-medium leading-snug">${message}</p>
+  `;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.classList.add("opacity-0", "translate-y-2");
+    setTimeout(() => toast.remove(), 300);
+  }, 4500);
+}
+
 /**
  * Handles the order form submission
  */
@@ -141,13 +163,20 @@ function handleOrderSubmit(event) {
   const servings = formData.get("servings");
   const message = formData.get("message");
 
+  // Parse date safely without UTC timezone shift (e.g. YYYY-MM-DD -> DD/MM/YYYY)
+  let formattedDate = eventDate;
+  if (eventDate && eventDate.includes("-")) {
+    const [year, month, day] = eventDate.split("-");
+    formattedDate = `${day}/${month}/${year}`;
+  }
+
   const whatsappMessage = encodeURIComponent(
     `*NOVO PEDIDO - Lubô Confeitaria*\n` +
       `------------------------\n\n` +
       `*Nome:* ${name}\n` +
       `*WhatsApp:* ${phone}\n` +
       `*E-mail:* ${email}\n` +
-      `*Data do evento:* ${new Date(eventDate).toLocaleDateString("pt-BR")}\n` +
+      `*Data do evento:* ${formattedDate}\n` +
       `*Número de pessoas:* ${servings}\n\n` +
       `*Detalhes do pedido:*\n${message}\n\n` +
       `------------------------\n` +
@@ -173,8 +202,7 @@ function handleOrderSubmit(event) {
     button.disabled = false;
     button.classList.remove("opacity-75");
 
-    // Optional: Show a success notification
-    alert(
+    showOrderToast(
       "Obrigado pelo seu interesse! Continue a conversa no WhatsApp para finalizar seu pedido."
     );
   }, 3000);
