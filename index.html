@@ -43,6 +43,9 @@
   <meta name="apple-mobile-web-app-title" content="Lubô Confeitaria" />
   <link rel="manifest" href="manifest.json" />
 
+  <!-- Preload LCP Hero Image -->
+  <link rel="preload" as="image" href="https://firebasestorage.googleapis.com/v0/b/lubo-45538.firebasestorage.app/o/site%2Fheader.webp?alt=media" fetchpriority="high" />
+
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="images/favicon.png" />
@@ -560,9 +563,9 @@
     <div class="mx-auto">
       <div class="relative overflow-hidden bg-(--cream)">
         <div class="grid lg:grid-cols-3 h-[400px] lg:h-[760px]">
-          <img id="header" alt="Bolo de casamento artístico em tons nude com flores naturais - Lubô Confeitaria"
+          <img id="header" src="https://firebasestorage.googleapis.com/v0/b/lubo-45538.firebasestorage.app/o/site%2Fheader.webp?alt=media" alt="Bolo de casamento artístico em tons nude com flores naturais - Lubô Confeitaria"
             class="hero-image h-full w-full object-cover absolute left-0 top-0 object-[80%_50%] lg:object-right after:bg-(--cream) after:h-full after:w-full after:block after:absolute after:left-0 after:top-0 after:z-10"
-            loading="eager" fetchpriority="high" onload="" />
+            loading="eager" fetchpriority="high" />
           <!-- Copy -->
           <div class="flex flex-col justify-center gap-6 p-10 sm:p-14 col-span-2 z-[1] bg-gradient-to-r from-(--cream)">
             <h1 class="text-4xl sm:text-5xl font-semibold leading-tight text-(--deep)">
@@ -648,15 +651,22 @@
 
         <div class="w-full lg:flex-1 grid gap-4 grid-rows-1 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <img id="fundadora_luciana_veiga"
+            src="https://firebasestorage.googleapis.com/v0/b/lubo-45538.firebasestorage.app/o/site%2Ffundadora_luciana_veiga.webp?alt=media"
             alt="Luciana Veiga, fundadora da Lubô Confeitaria, artista plástica e confeiteira"
             class="aspect-[3/4] w-full rounded-2xl object-cover sm:col-span-2 lg:col-span-2 row-span-1"
             loading="lazy" />
           <div class="grid gap-4 grid-cols-2 sm:grid-cols-1 lg:grid-rows-3 items-center sm:col-span-2 lg:col-span-1">
-            <img id="ingredients" alt="Ingredientes frescos e selecionados para confeitaria artesanal"
+            <img id="ingredients"
+              src="https://firebasestorage.googleapis.com/v0/b/lubo-45538.firebasestorage.app/o/site%2Fingredients.webp?alt=media"
+              alt="Ingredientes frescos e selecionados para confeitaria artesanal"
               class="w-full rounded-2xl aspect-[4/3] object-cover object-[50%_20%]" loading="lazy" />
-            <img id="sieve" alt="Processo artesanal de peneirar chocolate em pó na Lubô Confeitaria"
+            <img id="sieve"
+              src="https://firebasestorage.googleapis.com/v0/b/lubo-45538.firebasestorage.app/o/site%2Fsieve.webp?alt=media"
+              alt="Processo artesanal de peneirar chocolate em pó na Lubô Confeitaria"
               class="w-full rounded-2xl aspect-[4/3] object-cover object-[50%_30%]" loading="lazy" />
-            <img id="cookies" alt="Cookies artesanais decorados da Lubô Confeitaria"
+            <img id="cookies"
+              src="https://firebasestorage.googleapis.com/v0/b/lubo-45538.firebasestorage.app/o/site%2Fcookies.webp?alt=media"
+              alt="Cookies artesanais decorados da Lubô Confeitaria"
               class="w-full rounded-2xl aspect-[4/3] object-cover col-span-2 sm:col-span-1" loading="lazy" />
           </div>
         </div>
@@ -1222,7 +1232,6 @@
   </script>
   <script type="module" src="index.js" defer></script>
   <script type="module" src="menu.js" defer></script>
-  <script type="module" src="site-images.js" defer></script>
   <script type="module" src="carousel.js" defer></script>
   <script type="module" src="order.js" defer></script>
   <script type="module" src="filter.js" defer></script>
